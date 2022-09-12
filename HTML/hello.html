@@ -1,123 +1,137 @@
 <html>
     <head>
         <title>Formulaire Exemple</title>
+        <link rel="stylesheet" href="hello.css">
     </head>
     <body>
-        <header>
-            <h1>Formulaire création de compte sur un site de livraison</h1>
-        </header>
+        <section>
+            <header>
+                <h1>Formulaire création de compte sur un site de livraison</h1>
+            </header>
 
-            <form name=”f1” method=”GET”>                
-                <div>
-                    <label for="login">Login :</label>
-                    <input type="text" id="login" name="user_login">
-                </div>
-                <div>
-                    <label for="pw">Password :</label>
-                    <input type="password" id="pw" name="user_pw">
-                </div>
-                <div>
-                    <label for="Nom">Nom :</label>
-                    <input type ="text" id="msg" name="user_name">
-                </div>
-                <div>
-                    <label for="prénom">Prénom :</label>
-                    <input type ="text" id="msg" name="user_prenom">
-                </div>
-                <div>
-                    <label for="adresse">Adresse :</label>
-                    <input type ="text" id="adresse" name="user_adresse">
-                </div>
-                <div>
-                    <label for="mail">E-mail :</label>
-                    <input type ="email" id="mail" name="user-mail">
-                </div>
-                <div>
-                    <label for="tel">Téléphone :</label>
-                    <input type="tel" id="tel" name="user_tel">
-                </div>
-                <div>
-                    <label for="message">Message :</label>
-                    <textarea id="msg" name="user-msg"></textarea>
-                </div>
+                <form name=”f1” method=”GET”>                
+                    <div>
+                        <label for="login">Login </label>
+                        <br>
+                        <input type="text" id="login" name="user_login">
+                    </div>
+                    <div>
+                        <label for="pw">Password </label>
+                        <br>
 
-                <fieldset>
-                    <legend>Langues parlées:</legend>
-                    <div>
-                      <input type="checkbox" id="fr" name="fr" checked>
-                      <label for="fr">Francais</label>
+                        <input type="password" id="pw" name="user_pw">
                     </div>
                     <div>
-                      <input type="checkbox" id="en" name="en">
-                      <label for="en">Anglais</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="it" name="it">
-                        <label for="it">Italien</label>
-                    </div>
-                    <div>
-                    <input type="checkbox" id="all" name="all">
-                    <label for="all">Alllemand</label>
-                    </div>
-                </fieldset>
-                
-                <div>
-                    <label for="start">Date de départ:</label>
+                        <label for="Nom">Nom </label>
+                        <br>
 
-                    <input type="date" id="start" name="départ"
-                        value="2018-07-22"
-                        min="2018-01-01" max="2018-12-31">
-                </div>
-                <div>
-                    <label for="spe">Choisis une Spécialité:</label>
-
-                    <select name="Spécialité" id="spe">
-                        <option value="">--Choisis une option--</option>
-                        <option value="HGGSP">Histoire Géographique, Géopolitique et Sciences politiques.</option>
-                        <option value="HLP">Humanités, Littérature et Philosophie. </option>
-                        <option value="LLCER">Langues, Littératures et Cultures Étrangères</option>
-                        <option value="LLCA">Littérature, Langues et Cultures de l'Antiquité</option>
-                        <option value="MATH">Maths</option>
-                        <option value="NSI">Numérique et Sciences Informatiques. </option>
-                    </select>
-                </div>
-
-                <fieldset>
-                    <legend>Sexe :</legend>
-                
-                    <div>
-                      <input type="radio" id="M" name="sexe" value="M"
-                             checked>
-                      <label for="M">Homme</label>
+                        <input type ="text" id="msg" name="user_name">
                     </div>
-                
                     <div>
-                      <input type="radio" id="f" name="sexe" value="f">
-                      <label for="f">Femme</label>
-                    </div>
-                
-                    <div>
-                      <input type="radio" id="np" name="sexe" value="np">
-                      <label for="np">Non précisé</label>
-                    </div>
-                </fieldset>
+                        <label for="prénom">Prénom </label>
+                        <br>
 
-                <div>
+                        <input type ="text" id="msg" name="user_prenom">
+                    </div>
+                    <div>
+                        <label for="adresse">Adresse </label>
+                        <br>
+
+                        <input type ="text" id="adresse" name="user_adresse">
+                    </div>
+                    <div>
+                        <label for="mail">E-mail </label>
+                        <br>
+
+                        <input type ="email" id="mail" name="user-mail">
+                    </div>
+                    <div>
+                        <label for="tel">Téléphone </label>
+                        <br>
+
+                        <input type="tel" id="tel" name="user_tel">
+                    </div>
+
+                    <div>
+                        <label for="start">Date de naissance</label>
+                        <br>
+                        <input type="date" id="start" name="départ"
+                            value="1900-01-01"
+                            min="2018-01-01" max="2100-01-01">
+                    </div>
+                    <div>
+                        <label for="spe">Choisis une Spécialité:</label>
+                        <br>
+
+                        <select name="Spécialité" id="spe">
+                            <option value="">--Choisis une option--</option>
+                            <option value="HGGSP">Histoire Géographique, Géopolitique et Sciences politiques.</option>
+                            <option value="HLP">Humanités, Littérature et Philosophie. </option>
+                            <option value="LLCER">Langues, Littératures et Cultures Étrangères</option>
+                            <option value="LLCA">Littérature, Langues et Cultures de l'Antiquité</option>
+                            <option value="MATH">Maths</option>
+                            <option value="NSI">Numérique et Sciences Informatiques. </option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="color">Couleur favorite</label>
+                        <input type="color" id="color" name="color">
+                    </div>
+                    <div>
+                        <label for="stf">Satisfaction suite au questionnaire</label>
+
+                        <input type="range" id="age" name="stf"
+                            min="1" max="150">
+                    </div>
+
+                    <fieldset>
+                        <legend>Langues parlées:</legend>
+                        <div>
+                        <input type="checkbox" id="fr" name="fr" checked>
+                        <label for="fr">Francais</label>
+                        </div>
+                        <div>
+                        <input type="checkbox" id="en" name="en">
+                        <label for="en">Anglais</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="it" name="it">
+                            <label for="it">Italien</label>
+                        </div>
+                        <div>
+                        <input type="checkbox" id="all" name="all">
+                        <label for="all">Alllemand</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Sexe :</legend>
                     
-                    <input type="color" id="color" name="color">
-                    <label for="color">Couleur favorite</label>
-                </div>
-                <div>
-                    <input type="range" id="age" name="stf"
-                           min="1" max="150">
-                    <label for="stf">Satisfaction suite au questionnaire</label>
-                </div>
+                        <div>
+                        <input type="radio" id="M" name="sexe" value="M"
+                                checked>
+                        <label for="M">Homme</label>
+                        </div>
+                    
+                        <div>
+                        <input type="radio" id="f" name="sexe" value="f">
+                        <label for="f">Femme</label>
+                        </div>
+                    
+                        <div>
+                        <input type="radio" id="np" name="sexe" value="np">
+                        <label for="np">Non précisé</label>
+                        </div>
+                    </fieldset>               
 
-                <input type="submit" name="submit" value="Enregistrer"/>
-            </form>
+                    <input type="submit" name="submit" value="Enregistrer"/>
+                </form>
+            </section>
         <footer>
             <h3>Page créée par Antoine SAADA</h3>
         </footer>
+
     </body>
 
 </html>
