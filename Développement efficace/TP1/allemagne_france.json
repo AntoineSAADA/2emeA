@@ -1,0 +1,178 @@
+[
+    {
+        "nom": "Allemagne",
+        "regions": [
+            {
+                "nom": "Berlin",
+                "departements" : [
+                    {
+                        "nom": "Berlin",
+                        "communes": [
+                            {
+                                "nom": "Berlin",
+                                "population": 3748148,
+                                "superficie": 891.7,
+                                "medecins_par_10_000_hab": 64
+                            }
+                        ]
+                    }
+
+                ]
+            },
+            {
+                "nom": "Bavière",
+                "departements" : [
+                    {
+                        "nom": "Haute-Bavière",
+                        "communes": [
+                            {
+                                "nom": "München",
+                                "population": 1549615,
+                                "superficie": 310.43,
+                                "medecins_par_10_000_hab": 65
+                            },
+                            {
+                                "nom": "Garmisch-Partenkirchen",
+                                "population": 25995,
+                                "superficie": 206,
+                                "medecins_par_10_000_hab": 67
+                            }
+                        ]
+                    },
+                    {
+                        "nom": "Souabe",
+                        "communes": [
+                            {
+                                "nom": "Augsburg",
+                                "population": 295135,
+                                "superficie": 146.93,
+                                "medecins_par_10_000_hab": 66
+                            }                            
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "nom": "France",
+        "regions": [
+            {
+                "nom": "Centre-Val-de-Loire",
+                "departements": [
+                    {
+                        "nom": "Loiret",
+                        "communes": [
+                            {
+                                "nom": "Orléans",
+                                "population": 114782,
+                                "superficie": 27.48,
+                                "medecins_par_10_000_hab": 20
+                            },
+                            {
+                                "nom": "Olivet",
+                                "population": 21520,
+                                "superficie": 23.39,
+                                "medecins_par_10_000_hab": 25
+
+                            },
+                            {
+                                "nom": "Trinay",
+                                "population": 228,
+                                "superficie": 17.22,
+                                "medecins_par_10_000_hab": 0
+                            }
+                        ]
+                    },
+                    {
+                        "nom": "Loir-et-Cher",
+                        "communes": [
+                            {
+                                "nom": "Blois",
+                                "population": 45687,
+                                "superficie": 37.46,
+                                "medecins_par_10_000_hab": 45
+                            },
+                            {
+                                "nom": "Chambord",
+                                "population": 100,
+                                "superficie": 54.38,
+                                "medecins_par_10_000_hab": 100
+
+                            }
+                        ]
+                    },
+                    {
+                        "nom": "Cher",
+                        "communes": [
+                            {
+                                "nom": "Vierzon",
+                                "population": 228,
+                                "superficie": 17.22,
+                                "medecins_par_10_000_hab": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "nom": "Normandie",
+                "departements": [
+                    {
+                        "nom": "Manche",
+                        "communes": [
+                            {
+                                "nom": "Cherbourg",
+                                "population": 80076,
+                                "superficie": 68.53,
+                                "medecins_par_10_000_hab": 20        
+                            },
+                            {
+                                "nom": "La Hague",
+                                "population": 11785,
+                                "superficie": 148.68,
+                                "medecins_par_10_000_hab": 1000
+                                
+                            }
+
+                        ]
+                    },
+                    {
+                        "nom": "Seine-Maritime",
+                        "communes": [
+                            {
+                                "nom": "Rouen",
+                                "population": 110117,
+                                "superficie": 21.38,
+                                "medecins_par_10_000_hab": 50
+                            },
+                            {
+                                "nom": "Le Havre",
+                                "population": 170352,
+                                "superficie": 46.95,
+                                "medecins_par_10_000_hab": 40
+                            }
+                            
+                        ]
+                    }
+                ]
+            },
+            {
+                "nom": "Île-de-France",
+                "departements": [
+                    {
+                        "nom": "Paris",
+                        "communes": [
+                            {
+                                "nom": "Paris",
+                                "population": 3000000,
+                                "superficie": 105.40,
+                                "medecins_par_10_000_hab": 100
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

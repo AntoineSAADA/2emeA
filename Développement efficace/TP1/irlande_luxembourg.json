@@ -1,0 +1,54 @@
+[
+    {
+        "nom": "Irlande",
+        "departements": [
+            {
+                "nom": "Donegal",
+                "communes": [
+                    {
+                        "nom": "Bundoran",
+                        "population": 2140,
+                        "superficie": 35,
+                        "medecins_par_10_000_hab": 6
+                    },
+		    {
+                        "nom": "Glen Cholme Kille",
+                        "population": 724,
+                        "superficie": 70,
+                        "medecins_par_10_000_hab": 0
+		    }
+		]
+            }
+	    ,
+            {
+                "nom": "Kildare",
+                "communes" : [
+                    {
+                        "nom": "Maynooth",
+                        "population": 14585,
+                        "superficie": 310,
+                        "medecins_par_10_000_hab": 65
+                    }
+                ]
+            }
+	]
+    },
+    {
+        "nom": "Luxembourg",
+        "communes": [
+            {
+                "nom": "Luxembourg-Ville",
+                "population": 114782,
+                "superficie": 51.46,
+                "medecins_par_10_000_hab": 200
+            },
+            {
+                "nom": "Esch-sur-Alzette",
+                "population": 34282,
+                "superficie": 14.35,
+                "medecins_par_10_000_hab": 252
+
+            }
+        ]
+    }
+]
