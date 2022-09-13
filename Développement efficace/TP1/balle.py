@@ -15,8 +15,8 @@ class Balle:
         
     
     def avance(self,t,max_x,max_y):
-        self.position_x += int(self.vitesse_x*t)% max_x
-        self.position_y += int(self.vitesse_y*t)% max_y
+        self.position_x = int(self.vitesse_x*t)% max_x
+        self.position_y = int(self.vitesse_y*t)% max_y
     
     def dessine(self,s):
         pygame.draw.circle(s, self.couleur, (self.position_x,self.position_y), self.taille)
