@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Exo 1 td2</title>
+</head>
+<body>
+    <header>
+        <h1>Exo 1 td2</h1>
+        <p id="p1">paragraphe a masquer</p>        
+    </header>
+    <input type = "button" id = "bt" value = "Masquer" onclick = "cache()"/>
+    <input type = "button" id = "bt2" value = "Couleur" onclick = "color()"/>
+
+
+    <h2>
+        Liste des étudiants
+    </h2>
+    <ul>
+        <li><a href="">Ratio</a></li>
+        <li><a href="">Ratio</a></li>
+        <li><a href="">Ratio</a></li>
+        <li><a href="">Ratio</a></li>
+        <li><a href="">Ratio</a></li>   
+        
+    <script>
+        function cache(){
+            const pp = document.getElementById("p1");
+            pp.hidden= !pp.hidden;
+            const b = document.getElementById("bt");
+            if(b.value == "Masquer"){
+                b.value = "Afficher";
+            }
+            else{ 
+                b.value = "Masquer";
+            }
+        }
+        function color(){
+            document.body.style.backgroundColor = "#"+Math.floor(Math.random()*16777215).toString(16);
+        }
+        function selectLiens(){
+            const liens = document.getElementsByTagName("a");
+            return liens;
+        }
+
+    </script>
