@@ -1,6 +1,8 @@
 #! /usr/bin/env python3
 
 from glob import glob
+from random import randint
+import random
 import pygame
 import sys
 
@@ -11,8 +13,7 @@ FPS = 30
 WINDOWWIDTH = 800
 WINDOWHEIGHT = 600
 ARRIERE_PLAN = (42,17,51)
-balle1 = Balle(2,2,0.2,0.2,(0,0,0),50,WINDOWWIDTH,WINDOWHEIGHT)
-balle2 = Balle(2,2,0.5,0.9,(0,0,0),50,WINDOWWIDTH,WINDOWHEIGHT)
+liste_balle=[Balle(2,2,0.2,0.2,(0,0,0),50,WINDOWWIDTH,WINDOWHEIGHT)]
 SCORE = 0
  
 class Quitte(Exception ):
@@ -27,6 +28,7 @@ def handleKey(event):
 
 def handleClick(event):
     print("Clic à la position", event.pos)
+    print("Bouffe mes couilles Antoine", event.pos)
 
 def handleEvents():
     global SCORE
@@ -38,12 +40,13 @@ def handleEvents():
             handleKey(event)
         elif event.type == pygame.MOUSEBUTTONDOWN:
             handleClick(event)
-            if balle1.contient(event.pos):
-                print("Baballe trouvée !")
-                SCORE += 1
-            elif balle2.contient(event.pos):
-                print("Baballe trouvée !")
-                SCORE += 10
+            for balles in liste_balle:
+                if balles.contient(event.pos):
+                    SCORE += 1
+                    liste_balle.append(Balle(randint(1,100),randint(1,100),random.uniform(0,2),random.uniform(0,2),(randint(0,255),randint(0,255),randint(0,255)),randint(1,100),WINDOWWIDTH,WINDOWHEIGHT))
+                    print("Score : {}".format(SCORE))
+                    
+                    break
             
                 
 def refresh(s):
@@ -51,17 +54,16 @@ def refresh(s):
 
 temps_total = 0
     
-def affichage(s, t, font,balle1,balle2):
+def affichage(s, t, font,liste_balle):
     """
     Redessine l'écran. 't' est le temps écoulé depuis l'image précédente.
     """
     global temps_total
     temps_total += t
     refresh(s)
-    balle1.avance(temps_total,WINDOWWIDTH,WINDOWHEIGHT)
-    balle1.dessine(s)
-    balle2.avance(temps_total,WINDOWWIDTH,WINDOWHEIGHT)
-    balle2.dessine(s)
+    for balles in liste_balle:
+        balles.avance(temps_total,WINDOWWIDTH,WINDOWHEIGHT)
+        balles.dessine(s)
     
     message = "Allons chercher la baballe Score : {}".format(SCORE)
     message = font.render(message, 1, (255,255,255))
@@ -83,7 +85,7 @@ def main():
             
             pygame.display.update()
             temps_ecoule = FPSCLOCK.tick(FPS)
-            affichage(ecran, temps_ecoule, font,balle1,balle2)
+            affichage(ecran, temps_ecoule, font,liste_balle)
         except Quitte:
             break
 

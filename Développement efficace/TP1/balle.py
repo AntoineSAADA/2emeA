@@ -12,7 +12,6 @@ class Balle:
         self.taille = taille
         self.max_x = max_x
         self.max_y = max_y
-        
     
     def avance(self,t,max_x,max_y):
         self.position_x = int(self.vitesse_x*t)% max_x
