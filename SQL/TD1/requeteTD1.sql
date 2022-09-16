@@ -57,6 +57,17 @@ WHERE nppers > capacite;
 
 --3
 
-SELECT * FROM Reserver r natural join Reservable
-WHERE r.typeT not in (SELECT * FROM Reserver r natural join Reservable 
-                        WHERE ) 
+SELECT * FROM Reserver r natural join Occupant natural join Salle s1
+WHERE Occupant.idT not in (SELECT idT FROM Reservable natural join Salle s2
+                            WHERE s1.idS = s2.idS);
+
+--4
+
+-- Ecrire une requete pour afficher les couples de reservations différentes qui se chevauchent.
+SELECT * FROM Reserver r1 natural join Reserver r2
+WHERE r1.idS = r2.idS
+AND r1.idO  != r2.idO
+AND r1.dateD = r2.dateD
+AND r1.heure < r2.heure
+AND (r1.heure + r1.duree) > r2.heure;
+

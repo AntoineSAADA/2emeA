@@ -31,7 +31,6 @@ CREATE TABLE Reserver(
     duree int,
     nppers int NOT NULL ,
     CHECK (heure + duree <= 24)
-    CHECK ()
 );
 
 CREATE TABLE Reservable(
