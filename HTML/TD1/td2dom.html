@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Manipulation Dom</title>
+    </head>
+    <body>
+        <section>
+            <header>
+                <h1 id="titre1" class="titre">Je suis le titre 1</h1>
+            </header>
+            <ul>
+                <li>Liste 1</li>
+                <li>Liste 2</li>
+            </ul>
+            Fin de liste
+        </section>
+        <section>
+            <article>
+                <header>
+                    <h1 id="titre2" class="titre">Je suis le titre 2</h1>
+                </header>
+                L'article
+            </article>
+        </section>
+        <script>
+            console.log(document.body.children); // Affiche les enfants de body
+            console.log(document.querySelectorAll("body > * > *")); // Sélecteur CSS
+            for (const elem of document.querySelectorAll("body > * > *")) {
+                const nom = elem.nodeName; // Nom de la balise
+                const t = document.createTextNode(nom); // Création d'un noeud texte
+                elem.appendChild(t); // Ajout du noeud texte à la fin de l'élément
+            }
+            console.log(document.querySelectorAll("body > * > *")); // Affiche les balises avec le nom de la balise
+            for(const elem of document.getElementsByClassName("titre")) {
+                console.log(elem.parentNode); // Affiche le parent de l'élément
+                elem.parentNode.removeChild(elem); // Supprime l'élément
+            }
+
+            while(document.getElementsByClassName("titre").length > 0) { // Tant qu'il y a des éléments de la classe titre
+                document.getElementsByClassName("titre")[0].parentNode.removeChild(document.getElementsByClassName("titre")[0]); // Supprime le premier élément de la classe titre
+            }
+        </script>
+    </body>
+</html>

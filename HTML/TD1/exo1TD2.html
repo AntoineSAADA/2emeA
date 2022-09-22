@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Exo 1 td2</title>
+</head>
+    <body>
+        <header>
+            <h1>Exo 1 td2</h1>
+            <p id="p1">paragraphe a masquer</p>        
+        </header>
+        <input type = "button" id = "bt" value = "Masquer" onclick = "cache()"/>
+        <input type = "button" id = "bt2" value = "Couleur" onclick = "color()"/>
+
+
+
+        <h2>
+            Liste des étudiants
+        </h2>
+        <ul>
+            <li><a href="page1.html">Ratio</a></li>
+            <li><a href="page2.html">Ratio</a></li>
+            <li><a href="page3.html">Ratio</a></li>
+            <li><a href="page4.html">Ratio</a></li>
+            
+        </ul>   
+        <input type="button" value="Afficher Liens" onclick="AfficherLiens()">
+        <input type="button" value="Changer Image" onclick="changerImage()">
+
+        <img src="iut2.jpg" alt="iut" class="beau">
+
+        <script>
+            function cache(){
+                const pp = document.getElementById("p1");
+                pp.hidden= !pp.hidden;
+                const b = document.getElementById("bt");
+                if(b.value == "Masquer"){
+                    b.value = "Afficher";
+                }
+                else{ 
+                    b.value = "Masquer";
+                }
+            }
+            function color(){
+                document.body.style.backgroundColor = "#"+Math.floor(Math.random()*16777215).toString(16);
+            }
+            function selectLiens(){
+                const liens = document.getElementsByTagName("a");
+                return liens;
+            }
+            function AfficherLiens(){
+                const lesLiens = selectLiens();
+                console.log(lesLiens);
+                for(const liens of lesLiens){
+                    console.log(liens);
+                }
+
+            }
+            function changerImage(){
+                const beaux  = document.getElementsByClassName("beau");
+                console.log(beaux);
+                const image = beaux[0];
+                if(image.getAttribute("src") == "image1.png"){
+                    image.src = "iut2.jpg";
+                }
+                else{
+                    image.src = "image1.png";
+                }
+            }
+
+        </script>
+    </body>
+</html>
