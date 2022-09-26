@@ -1,9 +1,10 @@
--- CREATE DATABASE IF NOT EXISTS ENTREPOT DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
--- USE ENTREPOT;
+CREATE DATABASE IF NOT EXISTS ENTREPOT DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE ENTREPOT;
 
 drop table STOCKER;
 drop table ARTICLE;
 drop table ENTREPOT;
+drop table HISTORIQUE;
 
 CREATE TABLE ARTICLE (
   reference INT(9),
@@ -24,6 +25,13 @@ CREATE TABLE STOCKER (
   code INT(9),
   quantite INT(5),
   PRIMARY KEY (reference, code)
+) ;
+
+CREATE TABLE HISTORIQUE(
+  ref INT(9),
+  prixDepart DECIMAL(6,2),
+  prixFinal DECIMAL(6,2),
+  PRIMARY KEY (ref,prixDepart,prixFinal)
 ) ;
 
 ALTER TABLE STOCKER ADD FOREIGN KEY (code) REFERENCES ENTREPOT (code);
