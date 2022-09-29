@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exo1 TD2</title>
+    </head>
+    <body id ="body">
+        <header>
+            <h1>Exercice 1</h1>
+            <p id="pp">paragraphe à masquer.</p>
+        </header>
+        <input type = "button" id ="bt" value = "masquer" onclick = "cache()"/>
+        <input type = "button" id ="cc" value = "changer" onclick = "changercouleur()"/>
+        <section>
+            <h2>Une liste de lien</h2>
+            <ul>
+                <li> <a href = "page1.html"> Page 1 </a> </li>
+                <li> <a href = "page2.html"> Page 2 </a> </li>
+                <li> <a href = "page3.html"> Page 3 </a> </li>
+                <li> <a href = "page4.html"> Page 4 </a> </li>
+            </ul>
+        </section>
+        <section>
+            <p>Voici une image</p>
+            <image src = "iut_image.jpg" alt="iut orleans" class="beau"\>
+                <input type = "button" value="Changer image" onclick="changerImage()"\>
+        </section>
+        <section>
+            <p> Voici un paragraphe</p>
+            <p1> Texte</p1>
+            <input type = "button" value="Changer texte" onclick="changerTexte()"\>
+        </section>
+        <input type = "button" value="Afficher Liens" onclick="AfficherLiens()"\>
+        <script>
+            function cache(){
+                const pp = document.getElementById("pp");
+                pp.hidden = true;
+            }
+            function changercouleur(){
+                document.body.style.background = couleuraleatoire();
+            }
+            function couleuraleatoire(){
+                return "#" + (Math.floor(Math.random()*0xFFFFFF)).toString(16);
+            }
+            function selectLiens(){
+                let lesLiens = document.getElementsByTagName("a");
+                return lesLiens;
+            }
+            function AfficherLiens(){
+                const lesLiens = selectLiens();
+                console.log(lesLiens);
+                for (const liens of lesLiens){
+                    console.log(liens);
+                }
+            }
+            function changerImage(){
+                const beaux = document.getElementsByClassName("beau");
+                console.log(beaux);
+                const image = beaux[0];
+                if (image.getAttribute("src") == "iut_image.jpg"){
+                    image.src = "iut2.jpeg";
+                }
+                else{
+                    image.src = "iut_image.jpg";
+                }
+            }
+            function changerTexte(){
+                const p = document.getElementById("p1");
+                p.textContent("Nouveau Texte");
+            }
+        </script>
+    </body>
+</html>
