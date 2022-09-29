@@ -8,7 +8,7 @@
     </head>
     <body>
         <main>
-            <section>
+            <div class="divg">
                 <header>
                     <h1>Formulaire création de compte sur un site de livraison</h1>
                 </header>
@@ -111,26 +111,42 @@
                             <label for="np">Non précisé</label>
                             </div>
                         </fieldset>               
-
-                        <input type="submit" name="submit" value="Enregistrer" onclick="valider()"/>
+                        <!-- <input type="submit" name="submit" value="Enregistrer" onclick="valider()"/> -->
                     </form>
-                </section>
-                <section>
+                    <button onclick="valider()" id="togg1">Enregistrer </button>
+                </div>
+                <div class="divg" id ="d2">
                     <header>
                         <h1>Quizz Java Script</h1>
                     </header>
-                    <!-- Réalisation du questionnaire depuis hello.js -->
-
-                    <h2>Quel est le nom de la capitale de la France ?</h2>
-                    <input type="text" id="reponse1" name="reponse1">
-                    <button onclick="verif1()">Vérifier</button>
-                    <p id="resultat1"></p>
                     
+                    <div class = "question-container" id = "question">
+                        Les questions s'affichent ici
+                    </div>
+                    <div class="option-container">
+                        <button class="option" onclick="" id="op1" >option1</button>
+                  
+                        <button class="option" id="op2" >option2</button>
+                  
+                        <button class="option" id="op3">option3</button>
+                  
+                        <button class="option" id="op4">option4</button>
+                    </div>
+                    <div class="navigation">
+                        <button class="evaluate">Verifier</button>
+                        <button class="next">Prochaine question</button>
+                    </div>
+                    <div class="result">
+  
+                    </div>
+
+                    
+
 
 
                 
 
-                </section>
+                </div>
             </main>
         <footer>
             <h3>Page créée par Antoine SAADA</h3>
@@ -138,5 +154,6 @@
 
     </body>
     <script src="hello.js"></script>
+
 
 </html>

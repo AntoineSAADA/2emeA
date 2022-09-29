@@ -1,72 +1,4 @@
-let d2 = document.getElementById("d2");
-d2.style.display = "none";
-
-
-function valider() {
-    const login = document.getElementById('login').value;
-    const email = document.getElementById('mail').value;
-    const password = document.getElementById('pw').value;
-    const datenaiss = document.getElementById('datenaiss').value;
-    const numero = document.getElementById('tel').value;
-    const togg1 = document.getElementById('togg1')
-    const dseize = new Date();
-    dseize.setFullYear(dseize.getFullYear()-16);
-
-    var erreur = '';
-
-
-
-    console.log('debut des tests')
-    
-    if (login.length < 2) {
-        erreur += 'Le login est trop court';
-    }
-
-    else if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
-        erreur += 'L\'email n\'est pas valide';
-    }
-
-    else if (password.length < 6) {
-        erreur += 'Le mot de passe est trop court';
-    }
-    // verifier si le mot de passe ne contient pas de chiffre
-    else if (password == password.replace(/[0-9]/g, '')) {
-        erreur += 'Le mot de passe doit contenir au moins un chiffre';
-    }
-
-
-    else if (numero.length < 10 || numero.length > 10) {
-        erreur += 'Le numéro de téléphone n\'est pas valide, il n\'est pas composé de 10 chiffres';
-    }
-
-    // vérifier que le numéro ne comporte pas de lettres 
-    else if (numero != numero.replace(/[a-z]/g, '')) {
-        erreur += 'Le numéro de téléphone n\'est pas valide, il contient au moins une lettre';
-    }
-
-    // verifier que l'utilisateur est bien majeur 
-    else if(new Date(datenaiss) > dseize) {
-        erreur += 'Vous devez avoir au moins 16 ans';
-    }
-
-    togg1.addEventListener("click", () => {
-        affichage.hidden = false
-    })
-
-    if (erreur == '') {
-        d2.style.display = "block";
-        return true;
-    }
-    else {
-        alert(erreur);
-        return false;
-    }
-}
-
-
-
-// réalisation d'un questionnaire 
-
+// Questions will be asked
 const Questions = [{
     id: 0,
     q: "What is capital of India?",
@@ -96,9 +28,11 @@ const Questions = [{
         { text: "rajkot", isCorrect: false }
     ]
 
-}]
+}
 
+]
 
+// Set start
 var start = true;
 
 // Iterate
@@ -138,37 +72,37 @@ var selected = "";
 
 // Show selection for op1
 op1.addEventListener("click", () => {
-    op1.style.backgroundColor = "green";
-    op2.style.backgroundColor = "white";
-    op3.style.backgroundColor = "white";
-    op4.style.backgroundColor = "white";
+    op1.style.backgroundColor = "lightgoldenrodyellow";
+    op2.style.backgroundColor = "lightskyblue";
+    op3.style.backgroundColor = "lightskyblue";
+    op4.style.backgroundColor = "lightskyblue";
     selected = op1.value;
 })
 
 // Show selection for op2
 op2.addEventListener("click", () => {
-    op1.style.backgroundColor = "white";
-    op2.style.backgroundColor = "green";
-    op3.style.backgroundColor = "white";
-    op4.style.backgroundColor = "white";
+    op1.style.backgroundColor = "lightskyblue";
+    op2.style.backgroundColor = "lightgoldenrodyellow";
+    op3.style.backgroundColor = "lightskyblue";
+    op4.style.backgroundColor = "lightskyblue";
     selected = op2.value;
 })
 
 // Show selection for op3
 op3.addEventListener("click", () => {
-    op1.style.backgroundColor = "white";
-    op2.style.backgroundColor = "white";
-    op3.style.backgroundColor = "green";
-    op4.style.backgroundColor = "white";
+    op1.style.backgroundColor = "lightskyblue";
+    op2.style.backgroundColor = "lightskyblue";
+    op3.style.backgroundColor = "lightgoldenrodyellow";
+    op4.style.backgroundColor = "lightskyblue";
     selected = op3.value;
 })
 
 // Show selection for op4
 op4.addEventListener("click", () => {
-    op1.style.backgroundColor = "white";
-    op2.style.backgroundColor = "white";
-    op3.style.backgroundColor = "white";
-    op4.style.backgroundColor = "green";
+    op1.style.backgroundColor = "lightskyblue";
+    op2.style.backgroundColor = "lightskyblue";
+    op3.style.backgroundColor = "lightskyblue";
+    op4.style.backgroundColor = "lightgoldenrodyellow";
     selected = op4.value;
 })
 
