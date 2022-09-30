@@ -175,6 +175,7 @@ op4.addEventListener("click", () => {
 // Grabbing the evaluate button
 const evaluate = document.getElementsByClassName("evaluate");
 
+
 // Evaluate method
 evaluate[0].addEventListener("click", () => {
     if (selected == "true") {
@@ -202,5 +203,4 @@ if (id < 2) {
     iterate(id);
     console.log(id);
 }
-
 })

@@ -218,3 +218,8 @@ header{
     font-size: 200%;
     font-weight: bold;   
 }
+
+.navigation{
+    display: flex;
+    justify-content: space-around;
+}
