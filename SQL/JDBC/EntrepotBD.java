@@ -16,7 +16,7 @@ public class EntrepotBD {
         try {
             int max = 0;
             Statement stmt = connexion.getConnexion().createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT MAX(num) FROM article");
+            ResultSet rs = stmt.executeQuery("SELECT MAX(reference) FROM ARTICLE");
             while (rs.next()) {
                 max = rs.getInt(1);
             }
@@ -31,7 +31,7 @@ public class EntrepotBD {
     public Article getArticle(int reference){
         try{
             Article article = null;
-            PreparedStatement stmt = connexion.getConnexion().prepareStatement("SELECT * FROM article WHERE num = ?");
+            PreparedStatement stmt = connexion.getConnexion().prepareStatement("SELECT * FROM ARTICLE WHERE reference = ?");
             stmt.setInt(1, reference);
             ResultSet rs = stmt.executeQuery();
             if(rs.next()){
@@ -53,7 +53,7 @@ public class EntrepotBD {
         try{
             ArrayList<Article> articles = new ArrayList<Article>();
             Statement stmt = connexion.getConnexion().createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM article");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM ARTICLE");
             while(rs.next()){
                 articles.add(new Article(rs.getInt(1), rs.getString(2), rs.getFloat(3)));
             }
@@ -66,4 +66,41 @@ public class EntrepotBD {
             return null;
         }
     }
+    // Ecrire une procedure pour afficher tous les entrepots tries par departement avec pour chaque departement, le nombre d’entrepots qu’a le departement.
+    
+    public void entrepotsTriés(){
+        try{
+            Connection c = connexion.getConnexion();
+            Statement s = c.createStatement();
+            String departementActuelle = "";
+            int nbEntrepots = 0;
+            String res = "";
+            ResultSet rs = s.executeQuery
+            ("select code,nom,departement from ENTREPOT order by departement");
+            while (rs.next()){
+                if(!(departementActuelle.equals(rs.getString("departement")))){
+                    if(departementActuelle != ""){
+                        res += "Le département " + departementActuelle + " contient " + nbEntrepots + " " + "entrepots \n";}    
+
+                    res += rs.getInt("code") + " " + rs.getString("nom") + " "
+                    + rs.getString("departement") + " " + "\n"; 
+                        nbEntrepots = 1;
+                        departementActuelle = rs.getString("departement");
+                }
+                else{
+                    res += rs.getInt("code") + " " + rs.getString("nom") + " "
+                    + rs.getString("departement") + " " + "\n";
+                    nbEntrepots ++;
+                }
+            }
+            res += "Le département " + departementActuelle + " contient " + nbEntrepots + " " + "entrepots \n";
+            System.out.println(res);
+        }
+        catch(SQLException e){
+            System.out.println(e);
+        }
+        
+    }
+
+    
 }
