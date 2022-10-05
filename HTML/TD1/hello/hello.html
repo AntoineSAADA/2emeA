@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Formulaire Exemple</title>
+        <link rel="stylesheet" href="hello.css">
+
+    </head>
+    <body onload="init();">
+        <main>
+            <div class="divg" id="d1">
+                <header>
+                    <h1>Formulaire création de compte sur un site de livraison</h1>
+                </header>
+
+                    <form name=”f1” method=”GET”>                
+                        <div>
+                            <label for="login">Login </label>
+                            <br>
+                            <input type="text" id="login" name="user_login">
+                        </div>
+                        <div>
+                            <label for="pw">Password </label>
+                            <br>
+
+                            <input type="password" id="pw" name="user_pw">
+                        </div>
+                        
+                        <div>
+                            <label for="mail">E-mail </label>
+                            <br>
+
+                            <input type ="email" id="mail" name="user-mail">
+                        </div>
+                        <div>
+                            <label for="tel">Téléphone </label>
+                            <br>
+
+                            <input type="tel" id="tel" name="user_tel">
+                        </div>
+
+                        <div>
+                            <label for="start">Date de naissance</label>
+                            <br>
+                            <input type="date" id="datenaiss" name="départ"
+                                value="2000-01-01"
+                                min="1900-01-01" max="2100-01-01">
+                        </div>
+                        <div>
+                            <label for="spe">Choisis une Spécialité:</label>
+                            <br>
+
+                            <select name="Spécialité" id="spe">
+                                <option value="">--Choisis une option--</option>
+                                <option value="HGGSP">Histoire Géographique, Géopolitique et Sciences politiques.</option>
+                                <option value="HLP">Humanités, Littérature et Philosophie. </option>
+                                <option value="LLCER">Langues, Littératures et Cultures Étrangères</option>
+                                <option value="LLCA">Littérature, Langues et Cultures de l'Antiquité</option>
+                                <option value="MATH">Maths</option>
+                                <option value="NSI">Numérique et Sciences Informatiques. </option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="color">Couleur favorite</label>
+                            <input type="color" id="color" name="color">
+                        </div>
+                        <div>
+                            <label for="stf">Satisfaction suite au questionnaire</label>
+
+                            <input type="range" id="age" name="stf"
+                                min="1" max="150">
+                        </div>
+
+                        <fieldset>
+                            <legend>Langues parlées:</legend>
+                            <div>
+                            <input type="checkbox" id="fr" name="fr" checked>
+                            <label for="fr">Francais</label>
+                            </div>
+                            <div>
+                            <input type="checkbox" id="en" name="en">
+                            <label for="en">Anglais</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="it" name="it">
+                                <label for="it">Italien</label>
+                            </div>
+                            <div>
+                            <input type="checkbox" id="all" name="all">
+                            <label for="all">Alllemand</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Sexe :</legend>
+                        
+                            <div>
+                            <input type="radio" id="M" name="sexe" value="M"
+                                    checked>
+                            <label for="M">Homme</label>
+                            </div>
+                        
+                            <div>
+                            <input type="radio" id="f" name="sexe" value="f">
+                            <label for="f">Femme</label>
+                            </div>
+                        
+                            <div>
+                            <input type="radio" id="np" name="sexe" value="np">
+                            <label for="np">Non précisé</label>
+                            </div>
+                        </fieldset>               
+                        <!-- <input type="submit" name="submit" value="Enregistrer" onclick="valider()"/> -->
+                    </form>
+                    <button onclick="valider()" id="togg1">Enregistrer </button>
+                </div>
+                <div class="divg" id ="d2">
+                    <form name="form" id ="f1">
+                        <table>
+                        <TR>
+                            <TD colspan="3"><DIV id="question"></DIV></TD>
+                        </TR>
+                        <TR>
+                            <TD colspan="3"><HR></TD>
+                        </TR>
+                        <TR>
+                            <TD><INPUT type="button" id="btnPrec" value="<" onclick="prec();" disabled="true"></TD>
+                            <TD><DIV id="main"></DIV></TD>
+                            <TD><INPUT type="button" id="btnSuiv" value=">" onclick="suiv();"></TD>
+                        </TR>
+                        <TR>
+                            <TD colspan="3"><HR></TD>
+                        </TR>
+                        <TR>
+                            <TD colspan="3"><DIV id="details"></DIV></TD>
+                        </TR>
+                        </table>
+                        </FORM>                
+            
+
+                </div>
+            </main>
+        <footer>
+            <h3>Page créée par Antoine SAADA</h3>
+        </footer>
+
+    </body>
+    <script src="hello.js"></script>
+
+
+</html>

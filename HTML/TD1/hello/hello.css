@@ -6,12 +6,23 @@ footer{
     color: #fff;
 }
 
+
 .divg{
     text-align: center;
     margin-left: 15%;
-    border: 1px solid black;
     margin-right: 15%;
     background-color: rgb(124, 126, 119);
+    border-radius: 10px;
+}
+#f1{
+    text-align: right;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: rgb(124, 126, 119);
+    padding-left: 8%;
+}
+table{
+    text-align: center;
 }
 
 h1{
