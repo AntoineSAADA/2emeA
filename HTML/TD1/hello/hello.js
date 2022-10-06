@@ -13,7 +13,7 @@ function valider() {
     const dseize = new Date();
     dseize.setFullYear(dseize.getFullYear()-16);
 
-    var erreur = '';
+    let erreur = '';
 
 
 
@@ -70,9 +70,10 @@ var aff_courant;
 var nbFaites = 0;
 var reponseJuste = 0;
 
-var correction_auto = 1; //Possibilité de revenir en arriére (0)
-var separateur = ","; //Séparateurs des choix de réponse
-var separateur2 = "/";
+
+let correction_auto = 1; //Possibilité de revenir en arriére (0)
+let separateur = ","; //Séparateurs des choix de réponse
+let separateur2 = "/";
 
 function init() //Initialisation
 {
@@ -81,6 +82,7 @@ function init() //Initialisation
     affichage(aff_courant);
     document.getElementById("btnPrec").disabled = true;
     document.getElementById("btnSuiv").disabled = false;
+    reponseJuste = 0;
 }
 
 //Données Question, Choix de réponses
@@ -208,6 +210,9 @@ function aff_resultat()//Afichage des résultats
 }
 function rafraichir_details(moment) // Rafrachis les informations dans la barre du bas
 {
+    if (aff_courant == 0){
+        reponseJuste = 0;
+    }
     if (aff_courant > nbFaites)
     {
         nbFaites = aff_courant
