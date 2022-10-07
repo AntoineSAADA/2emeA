@@ -13,12 +13,20 @@ public class TestConnexion {
             System.out . println ( " La connexion c ’ est bien pass  ́e e " ) ;
         Connection connex = co.getConnexion () ;
         EntrepotBD entrepotBD = new EntrepotBD(co);
-        System.out.println(entrepotBD.getNumMaxArticle());
-        System.out.println(entrepotBD.getArticle(1));
-        System.out.println(entrepotBD.maxArticle());
-        System.out.println(entrepotBD.getListArticles());
-        entrepotBD.entrepotsTriés();
-        
+        // 1
+        // System.out.println(entrepotBD.getNumMaxArticle());
+        // // 2
+        // System.out.println(entrepotBD.getArticle(1));
+        // // 3
+        // System.out.println(entrepotBD.maxArticle());
+        // // 4
+        // System.out.println(entrepotBD.getListArticles());
+        // // 5
+        // entrepotBD.entrepotsTriés();
+        // // 6
+        // entrepotBD.listeEntrepotArticle(123);
+        entrepotBD.listeArticleEntrepot(1);    
+        System.out.println(entrepotBD.valeurEntrepot(1));  
         }
         else{
         System.out . println ( " La connexion `a votre BD ne n ’ est pas faite " ) ;

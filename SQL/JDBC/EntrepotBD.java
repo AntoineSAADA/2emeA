@@ -102,5 +102,82 @@ public class EntrepotBD {
         
     }
 
+    public void listeEntrepotArticle(int idArticle){
+        try{
+            Connection c = connexion.getConnexion();
+            Statement s = c.createStatement();
+            int codeEntrepotActuelle = 0;
+            String nomVille = "";
+            int nbArticles = 0;
+            String res = "";
+            PreparedStatement ps = c.prepareStatement("select code,nom, quantite from ENTREPOT natural join STOCKER natural join ARTICLE where reference = ?");
+            ps.setInt(1, idArticle);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                codeEntrepotActuelle = rs.getInt("code");
+                nomVille = rs.getString("nom");
+                nbArticles = rs.getInt("quantite");
+                res += "Il y a " + nbArticles + " " + "articles dans l'entrepot " + codeEntrepotActuelle + " " + "à " + nomVille + "\n";
+            }
+            System.out.println(res);
+
+
+       }
+        catch(SQLException e){
+            System.out.println(e);
+        }
+    }
+
+    public void listeArticleEntrepot(int idEntrepot){
+        try{
+            Connection c = connexion.getConnexion();
+            Statement s = c.createStatement();
+            int codeEntrepot = 0;
+            int quantite = 0;
+            String libelle = "";
+            String res = "";
+            PreparedStatement ps = c.prepareStatement("SELECT code,libelle, quantite FROM ENTREPOT natural join STOCKER natural join ARTICLE where code = ?;");
+            ps.setInt(1, idEntrepot);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                codeEntrepot = rs.getInt("code");
+                quantite = rs.getInt("quantite");
+                libelle = rs.getString("libelle");
+                res += "Il y a " + quantite +" "+ libelle + " " + "dans l'entrepot " + codeEntrepot + "\n";
+            }
+            System.out.println(res);
+
+        }
+        catch(SQLException e){
+            System.out.println(e);
+        }
+    }
+
+
+    public String valeurEntrepot(int idEntrepot){
+        try{
+            Connection c = connexion.getConnexion();
+            Statement s = c.createStatement();
+            int codeEntrepot = 0;
+            float valeur = 0;
+            String res = "";
+            PreparedStatement ps = c.prepareStatement("SELECT code, (quantite*prix) valeur FROM ENTREPOT natural join STOCKER natural join ARTICLE where code = ? group by code;");
+            ps.setInt(1, idEntrepot);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                codeEntrepot = rs.getInt("code");
+                valeur = rs.getFloat("valeur");
+                res += "La valeur de l'entrepot " + codeEntrepot + " est de " + valeur + " euros" + "\n";
+            }
+            return res;
+        }
+        catch(SQLException e){
+            System.out.println(e);
+            return null;
+        }
+    }
+
+
+    
     
 }
