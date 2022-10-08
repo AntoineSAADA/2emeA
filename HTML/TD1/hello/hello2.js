@@ -78,7 +78,6 @@ function init() //Initialisation
     nbFaites = 0;
     aff_courant = 0;
     affichage(aff_courant);
-    document.getElementById("btnPrec").disabled = true;
     document.getElementById("btnSuiv").disabled = false;
     reponseJuste = 0;
 }
@@ -123,10 +122,10 @@ class Question {
 //Données Question, Choix de réponses
 
 questions = new Array()
-questions[0] = new Question("QCM","Quelle est la capitale de la France ?","Paris","Paris/Lyon/Marseille/Paris");
-questions[3] = new Question("QCU","Ce questionnaire est-il bien fait ?","Oui","Oui/Non");
+questions[0] = new Question("QCM","Quelles sont les plus grandes ville de France ?","Paris/Marseille","Paris/Lyon/Marseille/Lille");
+questions[1] = new Question("QCU","Ce questionnaire est-il bien fait ?","Oui","Oui/Non");
 questions[2] = new Question("Texte","Quelle est la capitale de l'Allemagne ?","Berlin","");
-questions[1] = new Question("Slider","Quelle âge avez vous","","0/100");
+// questions[0] = new Question("Slider","Quelle âge avez vous","","0/100");
 
 
 reponses = new Array()
@@ -150,13 +149,10 @@ function affichage(index) //Changement de l'affichage d'une question
     }
     else if (questions[index].type == "QCU"){
         choix = questions[index].choix.split(separateur);
+        console.log(choix);
             for (x=0;x<choix.length;x++){
-                main += "<INPUT type='radio' name='rep"+x+"' id='rep' value='"+choix[x]+"'";
-                if (x == 0) //Le choix selectionné par default est le 1er
-                {
-                    main += " checked";
-                }
-                main += "> " + choix[x] + "<BR>";
+                console.log(choix[x]);
+                main += "<INPUT type='radio' name='rep' id='rep' value='"+choix[x]+"'> " + choix[x] + "<BR>";
             }
     }
     else if (questions[index].type == "Texte"){
@@ -189,9 +185,12 @@ function aff_resultat()//Afichage des résultats
         main += "<TR>";
         main += "<TD><B>";
         //Affichage de la réponse
-        if (questions[x].type == "QCM" || questions[x].type == "QCU")
+        if (questions[x].type == "QCM")
         {
-            main += reponses[x].join(separateur);
+            main += reponses[x];
+        }
+        else if (questions[x].type == "QCU"){
+            main += reponses[x];
         }
         else if (questions[x].type == "Texte")
         {
@@ -201,6 +200,10 @@ function aff_resultat()//Afichage des résultats
         {
             main += reponses[x];
         }
+        // Ajout de la bonne réponse dans la case de droite
+        main += "</B></TD><TD><B>";
+        main += questions[x].reponse;
+        
         main += "</B></TD>";
         main += "<TD><B>";
     }
@@ -210,15 +213,21 @@ function aff_resultat()//Afichage des résultats
     
     rafraichir_details("final");
 }
-let nbBonneRep = 0;
 function rafraichir_details(moment) // Rafrachis les informations dans la barre du bas
 {
-    nbFaites = aff_courant
+    if (aff_courant > nbFaites)
+    {
+        nbFaites = aff_courant
+    }
+    nbBonneRep = 0;
+
     if (correction_auto == 1 || moment == "final")
 
     {
         for (x=0;x<nbFaites;x++)
         {
+            console.log(reponses[x]);
+            console.log(questions[x].reponse);
             if(reponses[x] == questions[x].reponse)
             {
                 
@@ -249,56 +258,42 @@ function suiv() //Bouton Suivant
     {
         aff_courant += 1; //Changement du compteur de la question courrante
         affichage(aff_courant); //Changement de l'affichage de la question
-        
-        if (correction_auto == 1)
-        {
-            document.getElementById("btnPrec").disabled = true;
-        }
-        else //Dans le cas oé la correction nest pas automatisé, l'utilisateur peut tjrs revenir é la question précédente
-        {
-            document.getElementById("btnPrec").disabled = false;
-        }
     }
     else if (aff_courant == questions.length-1)//S'il s'agit de la derniére question les 2 boutons sont bloqués
     {
         aff_courant += 1;
         aff_resultat();
-        document.getElementById("btnPrec").disabled = true;
         document.getElementById("btnSuiv").disabled = true;
     }
 }
-function prec() //Bouton Précédant
-{
-    enregistre_rep()
-    if (aff_courant > -1)
-    {
-        aff_courant -= 1; //Changement du compteur de la question courrante
-        affichage(aff_courant); //Changement de l'affichage de la question
-        
-        document.getElementById("btnSuiv").disabled = false;
-        
-        if (aff_courant == 0)
-        {
-            document.getElementById("btnPrec").disabled = true;
-        }
-    }
-}
+
 function enregistre_rep() //Enregistrement des réponses saises ...
 {
     rep = "";
     if (aff_courant != questions.length)
     {
-        if(questions[aff_courant].type == "QCM" || questions[aff_courant].type == "QCU"){
+        if(questions[aff_courant].type == "QCM"){
             choix = questions[aff_courant].choix.split(separateur);
             for(x;x<choix.length;x++)
             {
                 if (document.getElementById("rep"+x).checked == true)
                 {
-                    rep += document.getElementById("rep"+x).value ;
+                    rep += document.getElementById("rep"+x).value + separateur;
                     document.getElementById("rep"+x).checked = false;
                 }
             }
-
+            rep = rep.substring(0, rep.length - 1);
+        }
+        else if (questions[aff_courant].type == "QCU"){
+            choix = questions[aff_courant].choix.split(separateur);
+            for(radio of document.getElementsByName("rep"))
+            {
+                if (radio.checked == true)
+                {
+                    rep = radio.value;
+                    break;
+                }
+            }
         }
         else if(questions[aff_courant].type == "Texte")
         {

@@ -1,24 +1,24 @@
 
 body{
-    background-color: #000;
+    background-color: rgb(204, 243, 224);
 }
-footer{
-    color: #fff;
-}
+
 
 
 .divg{
     text-align: center;
     margin-left: 15%;
     margin-right: 15%;
-    background-color: rgb(124, 126, 119);
+    background-color: #64968e ;
     border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    
+    
 }
 #f1{
     text-align: right;
     margin-left: 15%;
     margin-right: 15%;
-    background-color: rgb(124, 126, 119);
     padding-left: 8%;
 }
 table{
@@ -59,6 +59,8 @@ div{
 }
 
 input{
+    background-color: rgb(204, 243, 224);
+
     font-size: 1.2em;
 }
 
@@ -114,6 +116,8 @@ input[type=tel]{
     border-radius: 10px;
 }
 fieldset{
+    background-color: #77aaa2 ;
+    
     border: 1px solid black;
     border-radius: 10px;
     padding: 1%;
@@ -136,7 +140,8 @@ button{
     padding: 1%;
     border-radius: 10px;
     border: 1px solid black;
-    background-color: #f2f2f2;
+    background-color: rgb(204, 243, 224);
+
 }
 
 
@@ -144,7 +149,6 @@ input[type=date]{
     font-size: 100%;
     border-radius: 10px;
     border: 1px solid black;
-    background-color: #f2f2f2;
 }
 select{
     font-size: 100%;
@@ -152,8 +156,9 @@ select{
     margin-top: 2%;
     border-radius: 10px;
     border: 1px solid black;
-    background-color: #f2f2f2;
     text-align: center;
+    background-color: rgb(204, 243, 224);
+
 }
 
 header{
@@ -230,4 +235,10 @@ header{
 .navigation{
     display: flex;
     justify-content: space-around;
+}
+
+#d2{
+    margin-bottom:10% ;
+    margin-top:10%
+
 }
