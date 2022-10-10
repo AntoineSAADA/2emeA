@@ -4,7 +4,7 @@ public class TestConnexion {
         ConnexionMySQL co ;
         String loginMySQL = "saada" ;
         String mdpMySQL = "saada" ;
-        String nomServeur = "localhost" ;
+        String nomServeur = "servinfo-mariadb" ; // localhost
         String nomBase = "DB" + loginMySQL ;
 
         co = new ConnexionMySQL ( nomServeur , nomBase , loginMySQL , mdpMySQL ) ;

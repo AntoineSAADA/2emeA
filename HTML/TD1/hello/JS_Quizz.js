@@ -125,7 +125,7 @@ questions = new Array()
 questions[0] = new Question("QCM","Quelles sont les plus grandes ville de France ?","Paris/Marseille","Paris/Lyon/Marseille/Lille");
 questions[1] = new Question("QCU","Ce questionnaire est-il bien fait ?","Oui","Oui/Non");
 questions[2] = new Question("Texte","Quelle est la capitale de l'Allemagne ?","Berlin","");
-// questions[0] = new Question("Slider","Quelle âge avez vous","","0/100");
+questions[3] = new Question("Slider","Quelle âge avez vous","","0/100");
 
 
 reponses = new Array()

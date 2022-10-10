@@ -177,6 +177,126 @@ public class EntrepotBD {
         }
     }
 
+    public int majArticle(Article a){
+        int ref = a.getReference();
+        String nomA = a.getLibelle();
+        float prix = a.getPrix();
+        try{
+            Connection c = co.getConnexion();
+            PreparedStatement ps = c.prepareStatement("select count(reference) from ARTICLE where reference = ?");
+            ps.setInt(1,ref);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            int articleExiste = rs.getInt(1);
+            ps = c.prepareStatement("select count(reference) from ARTICLE where libelle = ? and reference = ?");
+            ps.setString(1,nomA);
+            ps.setInt(2,ref);
+            rs = ps.executeQuery();
+            rs.next();
+            int nomExiste = rs.getInt(1);
+            if(articleExiste == 0 && nomExiste == 0){
+                ps = c.prepareStatement("insert into ARTICLE values(?,?,?)");
+                ps.setInt(1,maxNum() + 1); ps.setString(2,nomA); ps.setFloat(3,prix);
+                int i = ps.executeUpdate();
+                return maxNum();
+            }
+            else if(nomExiste == 1){
+                ps = c.prepareStatement("update ARTICLE set prix = ? where reference = ? and libelle = ?");
+                ps.setFloat(1,prix);
+                ps.setInt(2,ref);
+                ps.setString(3,nomA);
+                int i = ps.executeUpdate();                                    
+                return ref;
+            }
+            else{
+                System.out.println("L'article n'existe pas.");
+                return -1;
+            }
+        }
+        catch(SQLException e){
+            System.out.println(e);
+            return -1;
+        }
+    }
+
+    public int ajouterEntrepot(Entrepot e){
+        try{
+            Connection c = co.getConnexion();
+            PreparedStatement ps = c.prepareStatement("select count(code) from ENTREPOT where code = ? and nom = ? and departement = ?");
+            ps.setInt(1,e.getCode());
+            ps.setString(2,e.getNom());
+            ps.setString(3,e.getDepartement());
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            if(rs.getInt(1) > 0){
+                System.out.println("Ce nom existe déjà.");
+                return -1;
+            }
+            System.out.println("a");
+            PreparedStatement ps2 = c.prepareStatement("select count(code) from ENTREPOT where departement = ?");
+            ps2.setString(1,e.getDepartement());
+            ResultSet rs2 = ps2.executeQuery();
+            rs2.next();
+            if(rs2.getInt(1) >= 3){
+                System.out.println("Le nombre d'entrepots dans ce département est trop élevé.");
+                return -1;
+            }
+            ps = c.prepareStatement("insert into ENTREPOT values(?,?,?)");
+            ps.setInt(1,e.getCode());
+            ps.setString(2,e.getNom());
+            ps.setString(3,e.getDepartement());
+            int i = ps.executeUpdate();
+            return e.getCode();
+
+        }
+        catch(SQLException erreur){
+            System.out.println(erreur);
+            return -1;
+        }
+    }
+
+    public int entrerStock(int refA,int codeE,int qte){
+        try{
+            int nvQte = 0;
+            Connection c = co.getConnexion();
+            PreparedStatement ps = c.prepareStatement("update STOCKER set quantite = quantite + ? where reference = ? and code = ?"); //Vérification article dans 
+            ps.setInt(1,qte);
+            ps.setInt(2,refA);
+            ps.setInt(3,codeE);
+            int i = ps.executeUpdate();
+            Statement s = c.createStatement();
+            ResultSet rs = s.executeQuery
+            ("select quantite from STOCKER where code =" + codeE + " and reference=" + refA);
+            rs.next();
+            return rs.getInt(1);            
+        }
+        catch(SQLException erreur){
+            System.out.println(erreur);
+            return -1;
+        }
+    }
+
+    public int sortirStock(int refA,int codeE,int qte){
+        try{
+            int nvQte = 0;
+            Connection c = co.getConnexion();
+            PreparedStatement ps = c.prepareStatement("update STOCKER set quantite = quantite - ? where reference = ? and code = ?");
+            ps.setInt(1,qte);
+            ps.setInt(2,refA);
+            ps.setInt(3,codeE);
+            int i = ps.executeUpdate();
+            Statement s = c.createStatement();
+            ResultSet rs = s.executeQuery
+            ("select quantite from STOCKER where code =" + codeE + " and reference=" + refA);
+            rs.next();
+            return rs.getInt(1);            
+        }
+        catch(SQLException erreur){
+            System.out.println(erreur);
+            return -1;
+        }
+    }
+
 
     
     
