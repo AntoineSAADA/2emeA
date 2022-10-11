@@ -1,0 +1,32 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Launch AppliRepertoire",
+            "request": "launch",
+            "vmArgs": "--module-path /Users/Shared/javafx-sdk-17.0.2/lib/ --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "AppliRepertoire",
+            "projectName": "immorleans_f9143e37"
+        },
+        {
+            "type": "java",
+            "name": "Launch AppliRepertoire",
+            "request": "launch",
+            "vmArgs": "--module-path /Users/Shared/javafx-sdk-17.0.2/lib/ --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "AppliRepertoire",
+            "projectName": "repertoire_84fee8c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "vmArgs": "--module-path /Users/Shared/javafx-sdk-17.0.2/lib/ --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "${file}"
+        }
+    ]
+}
