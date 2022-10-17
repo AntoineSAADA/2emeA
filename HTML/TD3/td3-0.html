@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Tableaux JS</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+         let etudiants = ['Jules', 'agatha','édmée', 'asterix', 'Idefix', 'Zazou', 'Robert'];
+         function aff_puce(){
+            let ul = document.createElement('ul');
+            for (etu of etudiants){
+                let li = document.createElement('li');
+                let txt = document.createTextNode(etu);
+                li.appendChild(txt);
+                ul.appendChild(li);
+            }
+            document.body.appendChild(ul);
+         }
+         // on affiche les étudiants dans la liste à puces
+         aff_puce();
+         // on trie 
+         etudiants.sort();
+         // on affiche
+         console.log(etudiants);
+         etudiants.sort((a,b) => a.localeCompare(b, 'fr', { ignorePunctuation: true }));
+
+         console.log(etudiants);
+         /* Si on veut mettre une majuscule initiale
+            à une chaîne */
+        const capitalize = (s) => {
+            if (typeof s !== 'string') return ''
+            return s.charAt(0).toUpperCase() + s.slice(1) // s[1:] python
+        }
+    </script>
+</html>

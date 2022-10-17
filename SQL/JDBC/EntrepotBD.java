@@ -182,7 +182,7 @@ public class EntrepotBD {
         String nomA = a.getLibelle();
         float prix = a.getPrix();
         try{
-            Connection c = co.getConnexion();
+            Connection c = connexion.getConnexion();
             PreparedStatement ps = c.prepareStatement("select count(reference) from ARTICLE where reference = ?");
             ps.setInt(1,ref);
             ResultSet rs = ps.executeQuery();
@@ -196,9 +196,9 @@ public class EntrepotBD {
             int nomExiste = rs.getInt(1);
             if(articleExiste == 0 && nomExiste == 0){
                 ps = c.prepareStatement("insert into ARTICLE values(?,?,?)");
-                ps.setInt(1,maxNum() + 1); ps.setString(2,nomA); ps.setFloat(3,prix);
+                ps.setInt(1,getNumMaxArticle() + 1); ps.setString(2,nomA); ps.setFloat(3,prix);
                 int i = ps.executeUpdate();
-                return maxNum();
+                return getNumMaxArticle();
             }
             else if(nomExiste == 1){
                 ps = c.prepareStatement("update ARTICLE set prix = ? where reference = ? and libelle = ?");
@@ -221,7 +221,7 @@ public class EntrepotBD {
 
     public int ajouterEntrepot(Entrepot e){
         try{
-            Connection c = co.getConnexion();
+            Connection c = connexion.getConnexion();
             PreparedStatement ps = c.prepareStatement("select count(code) from ENTREPOT where code = ? and nom = ? and departement = ?");
             ps.setInt(1,e.getCode());
             ps.setString(2,e.getNom());
@@ -258,7 +258,7 @@ public class EntrepotBD {
     public int entrerStock(int refA,int codeE,int qte){
         try{
             int nvQte = 0;
-            Connection c = co.getConnexion();
+            Connection c = connexion.getConnexion();
             PreparedStatement ps = c.prepareStatement("update STOCKER set quantite = quantite + ? where reference = ? and code = ?"); //Vérification article dans 
             ps.setInt(1,qte);
             ps.setInt(2,refA);
@@ -279,7 +279,7 @@ public class EntrepotBD {
     public int sortirStock(int refA,int codeE,int qte){
         try{
             int nvQte = 0;
-            Connection c = co.getConnexion();
+            Connection c = connexion.getConnexion();
             PreparedStatement ps = c.prepareStatement("update STOCKER set quantite = quantite - ? where reference = ? and code = ?");
             ps.setInt(1,qte);
             ps.setInt(2,refA);

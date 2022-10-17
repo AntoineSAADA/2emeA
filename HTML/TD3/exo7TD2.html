@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exo7 TD2</title>
+    </head>
+    <body>
+        <section>
+            <header>
+                <h1 id = "titre1" class = "titre">Titre 1</h1>
+            </header>
+            <ul>
+                <li>elem 1</li>
+                <li>elem 2</li>
+            </ul>
+            Fin de la section.
+        </section>
+        <section>
+            <article>
+                <header>
+                    <h1 id = "titre2" class="titre">Titre 2</h1>
+                </header>
+                L'article.
+            </article>
+        </section>
+        <script>
+            console.log(document.body.children);
+            for (const elem of document.querySelectorAll("body>*>*")){
+                const nom = elem.nodeName;
+                const t = document.createTextNode(nom);
+                elem.appendChild(t);
+                
+            }
+            console.log(document.querySelectorAll("body>*>*"));
+            while (document.getElementsByClassName("titre").length>0){
+                const elem = document.getElementsByClassName("titre")[0];
+                elem.parentNode.removeChild(elem);
+            }
+            String.prototype.reverse = function(char){
+                let res = "";
+                for (let i = this.length-1; i>=0; i--){
+                    res += this[i];
+                }
+                return res;
+            }
+            console.log("Bonjour".reverse());
+            const nums = [1,2,3,4,5,6,7,8,9,10];
+            let prod = nums.reduce((x,y)=> x<y ? x : y);
+            console.log(prod);
+            const nums2 = [2,9,3,4,5,7,8,9,10];
+            let prod2 = nums2.reduce((x,y)=> x<y ? x : y);
+            console.log(prod2);
+        </script>
+    </body>
+</html>
