@@ -1,0 +1,244 @@
+
+body{
+    background-color: rgb(204, 243, 224);
+}
+
+
+
+.divg{
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: #64968e ;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    
+    
+}
+#f1{
+    text-align: right;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-left: 8%;
+}
+table{
+    text-align: center;
+}
+
+h1{
+    text-shadow:   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000,
+     1px 1px 2px #141414,
+     1px 1px 3px #141414,
+     1px 1px 5px #141414,
+     1px 1px 7px #141414,
+     1px 1px 10px #141414,
+     1px 1px 12px #141414,
+     1px 1px 18px #141414;color:#fff;
+    font-size: 250%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+label{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+header{
+    justify-content: center;
+}
+
+div{
+    padding: 0.7%;
+    font-size: 1.5em;
+
+}
+
+input{
+    background-color: rgb(204, 243, 224);
+
+    font-size: 1.2em;
+}
+
+input[type=text]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+input[type=password]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+input[type=email]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+input[type=tel]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+fieldset{
+    background-color: #77aaa2 ;
+    
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    text-align: left;
+    font-size: 1.5em;
+
+}
+
+
+
+button{
+    font-size: 1.2em;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding: 1%;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: rgb(204, 243, 224);
+
+}
+
+
+input[type=date]{
+    font-size: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+select{
+    font-size: 100%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: rgb(204, 243, 224);
+
+}
+
+header{
+    padding-bottom: 2%;
+}
+
+
+
+
+
+.result{
+   
+    text-align: center;
+    font-size: 50px;
+    text-shadow:   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000,
+     1px 1px 2px #141414,
+     1px 1px 3px #141414,
+     1px 1px 5px #141414,
+     1px 1px 7px #141414,
+     1px 1px 10px #141414,
+     1px 1px 12px #141414,
+     1px 1px 18px #141414;
+      
+}
+.option-container{
+    padding: 5%;
+    display: flex;
+    justify-content: space-around;         
+}
+.option{    
+    padding: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 15vw;
+    height: 10vh;
+    font-size: larger;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: none;
+}
+.option:hover{
+    background-color: green;
+    color: #ccc;
+}
+
+
+.evaluate,.next{
+    width:30vw;
+    height: 8vh;
+    padding: 5px;
+    font-size: larger;
+    border: none;
+    border-radius: 10px;
+}
+.evaluate{
+    border-color: #000;
+    border-width: 5%;
+    border-style:solid
+}
+.next{
+    border-color: #000;
+    border-width: 5%;
+    border-style:solid
+}
+
+#question{
+    font-size: 200%;
+    font-weight: bold;   
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-around;
+}
+
+#d2{
+    margin-bottom:10% ;
+    margin-top:10%
+
+}

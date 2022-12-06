@@ -1,0 +1,10 @@
+window_sizes 1200 896 409 787 683 136
+windows_style
+show_stereotypes
+selected artifact_ref 146050 // Dialog
+open
+  class_ref 144898 // UmlParameter
+  deploymentview_ref 641 // API USER Deployment view
+  deploymentview_ref 129154 // dialog
+end
+end

@@ -1,0 +1,15 @@
+window_sizes 1920 1016 450 1464 843 120
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128002 // tp3
+    1171 674 70 A0 3 0
+end
+show_stereotypes
+selected classview_ref 128002 // src
+open
+  class_ref 128770 // JFrame
+  class_ref 128898 // Terminal
+  class_ref 129154 // IObservateur
+  class_ref 129282 // Observable
+end
+end

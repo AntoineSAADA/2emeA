@@ -1,0 +1,12 @@
+window_sizes 1192 887 433 755 682 128
+windows_style
+show_stereotypes
+selected class_ref 9217 // UmlPackage
+open
+  class_ref 9217 // UmlPackage
+  class_ref 133250 // UmlActivity
+  class_ref 134018 // UmlFlow
+  class_ref 139650 // UmlActivityControlNode
+  classview_ref 128130 // Aux class view
+end
+end

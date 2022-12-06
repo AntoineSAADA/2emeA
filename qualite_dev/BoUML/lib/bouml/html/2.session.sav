@@ -1,0 +1,13 @@
+window_sizes 1213 918 450 759 701 136
+windows_style
+diagrams
+  active  classdiagram_ref 129 // Inheritance Diagram of classes for Package and Views
+    674 553 100 2 0 0
+  classdiagram_ref 257 // Inheritance Diagram of classes for Diagrams
+    843 455 100 2 0 0
+end
+selected artifact_ref 5249 // UmlFormalParameter
+open
+  deploymentview_ref 385 // API USER Deployment view
+end
+end

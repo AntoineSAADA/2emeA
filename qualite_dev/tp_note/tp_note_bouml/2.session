@@ -1,0 +1,16 @@
+window_sizes 1920 1016 450 1464 843 120
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128130 // diagramme
+    1458 818 100 A0 0 0
+end
+show_stereotypes
+selected classview_ref 128002 // Automate
+open
+  class_ref 128258 // Automate
+  class_ref 128386 // Etat
+  class_ref 128514 // EtatFinal
+  class_ref 128642 // Transition
+  deploymentview_ref 128002 // Automate
+end
+end

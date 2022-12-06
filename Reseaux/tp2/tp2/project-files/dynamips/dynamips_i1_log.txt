@@ -1,0 +1,37 @@
+Nov 25 08:56:02.917 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Nov 25 08:56:02.917 HYPERVISOR: Started on IP = localhost, TCP port = 35321.
+Nov 25 08:56:02.925 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 25 08:56:02.925 HYPERVISOR: exec_cmd: hypervisor working_dir /home/jingerdwarf/Documents/2emeA/Reseaux/tp2/tp2/project-files/dynamips 
+Nov 25 08:56:02.925 GENERAL: working_dir=/home/jingerdwarf/Documents/2emeA/Reseaux/tp2/tp2/project-files/dynamips
+Nov 25 08:56:02.926 HYPERVISOR: exec_cmd: nio_bridge create Hub1 
+Nov 25 08:56:02.969 HYPERVISOR: exec_cmd: nio create_udp udp-b6d9f8e5-9ae6-4a58-b27e-8eeef40949b2 10001 127.0.0.1 10000 
+Nov 25 08:56:02.969 HYPERVISOR: exec_cmd: nio_bridge add_nio Hub1 udp-b6d9f8e5-9ae6-4a58-b27e-8eeef40949b2 
+Nov 25 08:56:03.022 HYPERVISOR: exec_cmd: nio create_udp udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 10003 127.0.0.1 10002 
+Nov 25 08:56:03.022 HYPERVISOR: exec_cmd: nio_bridge add_nio Hub1 udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 
+Nov 25 08:56:03.082 HYPERVISOR: exec_cmd: nio create_udp udp-d21b9ed6-683d-46c5-a064-afe9110a1ef1 10005 127.0.0.1 10004 
+Nov 25 08:56:03.082 HYPERVISOR: exec_cmd: nio_bridge add_nio Hub1 udp-d21b9ed6-683d-46c5-a064-afe9110a1ef1 
+Nov 25 09:06:14.624 HYPERVISOR: exec_cmd: nio bind_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 capture 
+Nov 25 09:06:14.624 HYPERVISOR: exec_cmd: nio setup_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 en10mb /home/jingerdwarf/Documents/2emeA/Reseaux/tp2/tp2/project-files/captures/PC2_Ethernet0_to_Hub1_Ethernet1.pcap 
+Nov 25 09:06:34.366 HYPERVISOR: exec_cmd: nio unbind_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 
+Nov 25 09:06:41.376 HYPERVISOR: exec_cmd: nio bind_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 capture 
+Nov 25 09:06:41.377 HYPERVISOR: exec_cmd: nio setup_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 en10mb /home/jingerdwarf/Documents/2emeA/Reseaux/tp2/tp2/project-files/captures/PC2_Ethernet0_to_Hub1_Ethernet1.pcap 
+Nov 25 09:06:51.734 HYPERVISOR: exec_cmd: nio unbind_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 
+Nov 25 09:06:58.466 HYPERVISOR: exec_cmd: nio bind_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 capture 
+Nov 25 09:06:58.467 HYPERVISOR: exec_cmd: nio setup_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 en10mb /home/jingerdwarf/Documents/2emeA/Reseaux/tp2/tp2/project-files/captures/PC2_Ethernet0_to_Hub1_Ethernet1.pcap 
+Nov 25 09:07:18.707 HYPERVISOR: exec_cmd: nio unbind_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 
+Nov 25 09:07:34.731 HYPERVISOR: exec_cmd: nio bind_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 capture 
+Nov 25 09:07:34.731 HYPERVISOR: exec_cmd: nio setup_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 en10mb /home/jingerdwarf/Documents/2emeA/Reseaux/tp2/tp2/project-files/captures/PC2_Ethernet0_to_Hub1_Ethernet1.pcap 
+Nov 25 09:09:50.854 HYPERVISOR: exec_cmd: nio unbind_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 
+Nov 25 09:09:57.733 HYPERVISOR: exec_cmd: nio bind_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 capture 
+Nov 25 09:09:57.733 HYPERVISOR: exec_cmd: nio setup_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 en10mb /home/jingerdwarf/Documents/2emeA/Reseaux/tp2/tp2/project-files/captures/PC2_Ethernet0_to_Hub1_Ethernet1.pcap 
+Nov 25 09:32:04.437 HYPERVISOR: exec_cmd: nio_bridge remove_nio Hub1 udp-b6d9f8e5-9ae6-4a58-b27e-8eeef40949b2 
+Nov 25 09:32:04.446 HYPERVISOR: exec_cmd: nio delete udp-b6d9f8e5-9ae6-4a58-b27e-8eeef40949b2 
+Nov 25 09:32:04.468 HYPERVISOR: exec_cmd: nio unbind_filter udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 2 
+Nov 25 09:32:04.469 HYPERVISOR: exec_cmd: nio_bridge remove_nio Hub1 udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 
+Nov 25 09:32:04.486 HYPERVISOR: exec_cmd: nio delete udp-2dbbb1e3-e8b8-4782-8f60-7c896b3c40be 
+Nov 25 09:32:04.507 HYPERVISOR: exec_cmd: nio_bridge remove_nio Hub1 udp-d21b9ed6-683d-46c5-a064-afe9110a1ef1 
+Nov 25 09:32:04.527 HYPERVISOR: exec_cmd: nio delete udp-d21b9ed6-683d-46c5-a064-afe9110a1ef1 
+Nov 25 09:32:04.546 HYPERVISOR: exec_cmd: nio_bridge delete Hub1 
+Nov 25 09:32:04.547 HYPERVISOR: exec_cmd: hypervisor stop 
+Nov 25 09:32:04.571 HYPERVISOR: Stopped.
+Nov 25 09:32:04.571 GENERAL: reset done.

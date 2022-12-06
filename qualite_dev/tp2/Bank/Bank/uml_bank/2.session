@@ -1,0 +1,16 @@
+window_sizes 1920 1016 450 1464 843 120
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128002 // diagram
+    696 703 80 A4 120 0
+end
+show_stereotypes
+selected classview_ref 128002 // src
+open
+  class_ref 128386 // Operations
+  class_ref 128258 // Compte
+  class_ref 128002 // Bank
+  class_ref 128130 // Client
+  classdiagram_ref 128002 // diagram
+end
+end
