@@ -1,0 +1,16 @@
+{% extends "home.html" %} 
+{% block styles %}
+{{ super() }}
+<link rel = "stylesheet" href="{{ url_for('static', filename = 'home.css')}}">
+{% endblock %}
+{% block content %} 
+
+<h1>{{title}}</h1>
+<div class="sample">  
+    {% for x in book %}
+        <p>{{x.title}}</p>
+        <a href = {{x.url}}><img src="{{ url_for('static', filename='images/'+x.img) }}"></a>
+    {% endfor %}
+</div>
+{% endblock %}
+

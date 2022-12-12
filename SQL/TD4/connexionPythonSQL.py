@@ -157,7 +157,7 @@ if __name__ == "__main__":
     # passwd=getpass.getpass("mot de passe MySQL ")
     # serveur=input("serveur MySQL ")
     # bd=input("nom de la base de données ")
-    cnx=ouvrir_connexion("saada","saada","servinfo-mariadb","DBsaada")
+    cnx=ouvrir_connexion("saada","saada","localhost","DBsaada")
     # ici l'appel des procédures et fonctions
     # print(max_ref(cnx))
     # print(get_article(cnx,1))
